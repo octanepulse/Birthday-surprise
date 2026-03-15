@@ -48,4 +48,28 @@ font-size:24px;
 
 <p>I made a small surprise on the internet just for you</p>
 
-<button onclick="showMessage()">🎁 Open your birthday surprise</button
+<button onclick="showMessage()">🎁 Open your birthday surprise</button>
+  <p id="message"></p>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+
+function showMessage(){
+
+document.getElementById("message").innerHTML =
+"🎂 Happy Birthday! I hope today is filled with laughter, surprises, and everything that makes you smile ❤️";
+
+confetti({
+particleCount: 200,
+spread: 120,
+origin: { y: 0.6 }
+});
+
+}
+
+</script>
+
+</body>
+</html>
+                                                               
