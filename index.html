@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>❤️ Love Website</title>
+<title>This is for you my love❤️</title>
 
 <style>
 
@@ -17,8 +17,8 @@ overflow-x:hidden;
 
 .heart{
 position:fixed;
-bottom:-20px;
-font-size:20px;
+bottom:-25px;
+font-size:25px;
 animation:float 8s linear infinite;
 opacity:0.7;
 }
@@ -109,7 +109,8 @@ padding:40px;
 border-radius:20px;
 box-shadow:0 10px 25px rgba(0,0,0,0.1);
 text-align:center;
-font-size:18px;
+font-size:24px;
+line-height:1.6;
 }
 
 /* Polaroids */
@@ -121,21 +122,41 @@ flex-direction:column;
 align-items:center;
 }
 
-.polaroids img{
+.polaroid{
+position:relative;
+margin:20px;
+}
+
+.polaroid img{
 width:140px;
 background:white;
 padding:10px;
-margin:20px;
 box-shadow:0 5px 15px rgba(0,0,0,0.2);
 border-radius:5px;
 }
 
-.polaroids img:nth-child(odd){
+.polaroid:nth-child(odd){
 transform:rotate(-6deg);
 }
 
-.polaroids img:nth-child(even){
+.polaroid:nth-child(even){
 transform:rotate(6deg);
+}
+
+/* Golden fairy lights */
+
+.light{
+width:8px;
+height:8px;
+background:gold;
+border-radius:50%;
+position:absolute;
+animation:blink 1s infinite alternate;
+}
+
+@keyframes blink{
+from{opacity:0.3}
+to{opacity:1}
 }
 
 </style>
@@ -143,8 +164,9 @@ transform:rotate(6deg);
 
 <body>
 
-<!-- Floating Hearts Script -->
 <script>
+
+/* Floating hearts */
 
 setInterval(()=>{
 
@@ -177,9 +199,7 @@ setTimeout(()=>heart.remove(),8000)
 <div class="envelope-container" id="envelopeContainer">
 
 <div class="envelope" onclick="openLetter()" id="envelope">
-
 <div class="flap"></div>
-
 </div>
 
 <p>Click the envelope 💌</p>
@@ -192,12 +212,33 @@ setTimeout(()=>heart.remove(),8000)
 
 <div class="polaroids">
 
+<div class="polaroid">
 <img src="photo1.jpg">
+<span class="light" style="top:-5px;left:-5px"></span>
+<span class="light" style="top:-5px;right:-5px"></span>
+</div>
+
+<div class="polaroid">
 <img src="photo2.jpg">
+<span class="light" style="bottom:-5px;left:-5px"></span>
+<span class="light" style="bottom:-5px;right:-5px"></span>
+</div>
+
+<div class="polaroid">
 <img src="photo3.jpg">
+</div>
+
+<div class="polaroid">
 <img src="photo4.jpg">
+</div>
+
+<div class="polaroid">
 <img src="photo5.jpg">
+</div>
+
+<div class="polaroid">
 <img src="photo6.jpg">
+</div>
 
 </div>
 
@@ -215,12 +256,12 @@ I'm so lucky to have you as my wife
 
 <div class="polaroids">
 
-<img src="photo7.jpg">
-<img src="photo8.jpg">
-<img src="photo9.jpg">
-<img src="photo10.jpg">
-<img src="photo11.jpg">
-<img src="photo12.jpg">
+<div class="polaroid"><img src="photo7.jpg"></div>
+<div class="polaroid"><img src="photo8.jpg"></div>
+<div class="polaroid"><img src="photo9.jpg"></div>
+<div class="polaroid"><img src="photo10.jpg"></div>
+<div class="polaroid"><img src="photo11.jpg"></div>
+<div class="polaroid"><img src="photo12.jpg"></div>
 
 </div>
 
@@ -228,22 +269,18 @@ I'm so lucky to have you as my wife
 
 <script>
 
-/* Button Click */
+/* Button click */
 
 function startGift(){
 
 document.getElementById("start").style.display="none"
 document.getElementById("envelopeContainer").style.display="flex"
 
-confetti()
-
 }
 
-/* Envelope Click */
+/* Envelope click */
 
 function openLetter(){
-
-confetti()
 
 document.getElementById("envelope").classList.add("open")
 
@@ -258,53 +295,7 @@ typeLetter()
 
 }
 
-/* Confetti */
-
-function confetti(){
-
-const colors=["#ff4d6d","#ffd166","#06d6a0","#118ab2","#ef476f","#ffd1dc"]
-
-for(let i=0;i<150;i++){
-
-let c=document.createElement("div")
-
-let size=Math.random()*10+6
-
-c.style.position="fixed"
-c.style.width=size+"px"
-c.style.height=size+"px"
-c.style.background=colors[Math.floor(Math.random()*colors.length)]
-c.style.left=Math.random()*100+"vw"
-c.style.top="-20px"
-c.style.borderRadius="50%"
-
-document.body.appendChild(c)
-
-let y=0
-let xMove=(Math.random()-0.5)*2
-
-let fall=setInterval(()=>{
-
-y+=3
-c.style.top=y+"px"
-
-let left=parseFloat(c.style.left)
-c.style.left=(left+xMove)+"px"
-
-if(y>window.innerHeight){
-
-clearInterval(fall)
-c.remove()
-
-}
-
-},20)
-
-}
-
-}
-
-/* Typing Animation */
+/* Typing animation */
 
 let text=`Today is your special day, but honestly,
 every day with you feels special.
