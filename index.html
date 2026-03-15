@@ -37,6 +37,19 @@ transform:scale(1.05);
 margin-top:30px;
 font-size:24px;
 }
+  .gallery{
+margin-top:40px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.gallery img{
+width:220px;
+border-radius:12px;
+box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
 
 </style>
 
@@ -50,6 +63,15 @@ font-size:24px;
 
 <button onclick="showMessage()">🎁 Open your birthday surprise</button>
   <p id="message"></p>
+  <h2>Some Memories 📸</h2>
+
+<div class="gallery">
+
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
