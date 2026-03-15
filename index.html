@@ -46,6 +46,21 @@ function showMessage(){
 document.getElementById("message").innerHTML =
 "You make the world brighter. I hope this birthday is as amazing as you are ❤️";
 }
+</<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+function showMessage(){
+
+document.getElementById("message").innerHTML =
+"🎂 Happy Birthday! I hope today is filled with laughter, surprises, and all the happiness you deserve ❤️";
+
+confetti({
+particleCount: 150,
+spread: 70,
+origin: { y: 0.6 }
+});
+
+}
 </script>
 
 </body>
