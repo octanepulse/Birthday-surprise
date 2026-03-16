@@ -5,7 +5,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Dancing+
   Script:wght@500&display=swap" rel="stylesheet">
-<title>New Message!❤️</title>
+<title>Hey this is for you!❤️</title>
 
 <style>
 
@@ -219,7 +219,7 @@ background:#ff4d6d;
 animation:blink 1s infinite;
 }
 
-@keyframes blink{
+@keyframes cursorBlink{
 0%{opacity:1;}
 50%{opacity:0;}
 100%{opacity:1;}
@@ -313,8 +313,7 @@ setTimeout(()=>heart.remove(),8000)
 <h2>My Dear Wifeyy ❤️</h2>
 
 <p>
-<span id="typed"></span>
-<span class="cursor"></span>
+<span id="typed"></span><span class="cursor"></span>
 </p>
 
 <h3 style="color:#ff4d6d">
@@ -427,6 +426,8 @@ let i=0
 
 function typeLetter(){
 
+let speed=40
+
 function typing(){
 
 if(i<text.length){
@@ -435,7 +436,7 @@ document.getElementById("typed").innerHTML+=text.charAt(i)
 
 i++
 
-setTimeout(typing,40)
+setTimeout(typing,speed)
 
 }
 
